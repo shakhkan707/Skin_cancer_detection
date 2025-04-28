@@ -1,7 +1,6 @@
 # Skin Cancer Detection Project
 
-## Group: IT-2208
-**Students:** Aniyar Baibossyn, Almas Murat, Shakhnazar Kapar  
+**Student:** Shakhnazar Kapar  
 
 ## I. Introduction
 
@@ -12,7 +11,7 @@ Skin cancer presents a significant global health risk, underscoring the need for
 In the pursuit of improved diagnostic tools, machine learning has emerged as a transformative force. Studies by Kim et al. and Nancy et al. highlight the significance of deep learning and transfer learning in enhancing image classification tasks in medical diagnostics. This project builds upon these findings to create a more reliable and accessible solution.
 
 ### Current Work
-Our approach harnesses the power of pre-trained models, adapting them through transfer learning to recognize patterns indicative of malignant or benign skin lesions. This method not only accelerates the training process but also promises to deliver superior diagnostic capabilities.
+My approach harnesses the power of pre-trained models, adapting them through transfer learning to recognize patterns indicative of malignant or benign skin lesions. This method not only accelerates the training process but also promises to deliver superior diagnostic capabilities.
 
 ## II. Data and Methods
 
@@ -54,7 +53,7 @@ m.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
 
 m.summary()
 ```
-We adjusted the dimensions of all images to (224, 224, 3) to align with the input requirements of the InceptionV3 architecture. To leverage transfer learning, we utilized the TensorFlow Hub library to import and incorporate the InceptionV3 architecture, along with its pre-trained weights from ImageNet. By setting the 'trainable' parameter to False, we ensured that the pre-trained weights remain fixed during our training process. Additionally, we appended a final output layer comprising a single unit. This layer is designed to produce an output value ranging between 0 and 1. A value closer to 0 signifies a prediction of "benign," while a value closer to 1 indicates a prediction of "malignant."
+I adjusted the dimensions of all images to (224, 224, 3) to align with the input requirements of the InceptionV3 architecture. To leverage transfer learning, we utilized the TensorFlow Hub library to import and incorporate the InceptionV3 architecture, along with its pre-trained weights from ImageNet. By setting the 'trainable' parameter to False, we ensured that the pre-trained weights remain fixed during our training process. Additionally, we appended a final output layer comprising a single unit. This layer is designed to produce an output value ranging between 0 and 1. A value closer to 0 signifies a prediction of "benign," while a value closer to 1 indicates a prediction of "malignant."
 
 KerasLayer (Transfer Learning from InceptionV3):
 Description: This layer uses transfer learning from the InceptionV3 architecture via TensorFlow Hub. It takes the preprocessed input images of size (224, 224, 3) and extracts features from them. The output shape is (None, 2048), meaning that each input image is represented by a feature vector of length 2048.
